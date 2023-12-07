@@ -74,6 +74,8 @@ nav a:hover {
 }
 
 .professional-card {
+    display: flex;
+    flex-direction: column;
     background: white;
     padding: 20px;
     border-radius: 15px;
@@ -82,13 +84,13 @@ nav a:hover {
     position: relative;
     padding-top: 100px;
     margin-top: 100px;
+    align-items: center;
 }
 
 .imgUser{
     border-radius: 80px;
     position: absolute;
     top: -70px;
-    left: 120px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 .professional-card h3 {
