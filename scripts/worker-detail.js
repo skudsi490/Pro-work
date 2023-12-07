@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const params = new URLSearchParams(window.location.search);
     const professionalId = params.get('id');
 
-    // Function to fetch professional details
     function fetchProfessionalDetails(id) {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', '../data/workers.json', true);
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     }
 
-    // Function to display professional details
     function displayProfessionalDetails(professional) {
         professionalDetails.innerHTML = `
             <img src="${professional.imageUrl}" alt="Profile Image">
@@ -43,12 +41,10 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // Event listener for 'Order Now' button
     orderNowButton.addEventListener('click', function() {
         const userLoggedIn = localStorage.getItem('userData');
         if (userLoggedIn) {
             alert('Proceeding to order...');
-            // Add additional logic for the ordering process
         } else {
             window.location.href = 'register.html';
         }
