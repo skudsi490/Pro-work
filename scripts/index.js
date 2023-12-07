@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 }
 
-function createProfessionalCard(professional, imageUrl = 'path/to/default/image.jpg') {
+function createProfessionalCard(professional, imageUrl = '../media/image.jpg') {
     const card = document.createElement('div');
     card.className = 'professional-card';
     card.innerHTML = `
