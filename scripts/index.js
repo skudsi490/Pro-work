@@ -115,8 +115,9 @@ function createProfessionalCard(professional, imageUrl = '../media/image.jpg') {
     filterForm.addEventListener('submit', filterProfessionals);
 
     window.viewProfessionalDetails = function(professionalId) {
-        alert(`View details for professional ID: ${professionalId}`);
+        window.location.href = `worker.html?id=${professionalId}`;
     };
+    
 
     loadProfessionals();
 });
