@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let professionals = localStorage.getItem('professionals');
         if (professionals) {
             professionals = JSON.parse(professionals);
-            fetchRandomUserImages(professionals);  
+            populateFilterOptions(professionals);
+            renderProfessionals(professionals);
         } else {
             fetchProfessionals();
         }
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.status === 200) {
                 const data = JSON.parse(this.responseText);
                 localStorage.setItem('professionals', this.responseText);
-                fetchRandomUserImages(data);  
+                populateFilterOptions(data);
+                renderProfessionals(data);
             } else {
                 console.error('Error fetching data:', xhr.statusText);
             }
@@ -31,44 +33,64 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     }
 
-    function fetchRandomUserImages(professionals) {
-        const numberOfProfessionals = professionals.length;
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', `https://randomuser.me/api/?results=${numberOfProfessionals}`, true);
-        xhr.onload = function() {
-            if (this.status === 200) {
-                const usersData = JSON.parse(this.responseText);
-                const userImages = usersData.results.map(user => user.picture.large);
-                renderProfessionals(professionals, userImages);
-            } else {
-                console.error('Error fetching random user images:', xhr.statusText);
-                renderProfessionals(professionals, []);
-            }
-        };
-        xhr.onerror = function() {
-            console.error('Request error...');
-            renderProfessionals(professionals, []);
-        };
-        xhr.send();
-    }
-    
-    function renderProfessionals(professionals, userImages) {
-        professionalsList.innerHTML = '';
-        professionals.forEach((professional, index) => {
-            const imageUrl = userImages[index] || 'path/to/default/image.jpg'; // Fallback to default image
-            const professionalCard = createProfessionalCard(professional, imageUrl);
-            professionalsList.appendChild(professionalCard);
+    function populateFilterOptions(professionals) {
+        const professionSet = new Set(professionals.map(p => p.profession));
+        professionSelect.innerHTML = '<option value="">Any</option>';
+        professionSet.forEach(profession => {
+            const option = document.createElement('option');
+            option.value = profession;
+            option.textContent = profession;
+            professionSelect.appendChild(option);
         });
+    }    
+
+
+    function renderProfessionals(professionals) {
+        fetchRandomUserImages(professionals.length)
+            .then(userImages => {
+                professionalsList.innerHTML = '';
+                professionals.forEach((professional, index) => {
+                    const imageUrl = userImages[index];
+                    const professionalCard = createProfessionalCard(professional, imageUrl);
+                    professionalsList.appendChild(professionalCard);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching user images:', error);
+                // Fallback: Render professionals without images
+                professionalsList.innerHTML = '';
+                professionals.forEach(professional => {
+                    const professionalCard = createProfessionalCard(professional);
+                    professionalsList.appendChild(professionalCard);
+                });
+            });
     }
 
-    function createProfessionalCard(professional, imageUrl) {
+    function fetchRandomUserImages(count) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `https://randomuser.me/api/?results=${count}`, true);
+            xhr.onload = function() {
+                if (this.status === 200) {
+                    const usersData = JSON.parse(this.responseText);
+                    const userImages = usersData.results.map(user => user.picture.large);
+                    resolve(userImages);
+                } else {
+                    reject('Failed to fetch user images');
+                }
+            };
+            xhr.onerror = function() {
+                reject('Network error occurred');
+            };
+            xhr.send();
+        });
+    }
+    
+    function createProfessionalCard(professional, imageUrl = 'path/to/default/image.jpg') {
         const card = document.createElement('div');
         card.className = 'professional-card';
-    
-        const defaultImage = imageUrl || 'path/to/default/image.jpg'; 
-    
         card.innerHTML = `
-            <img src="${defaultImage}" alt="Profile Image" class="profile-image">
+            <img src="${imageUrl}" alt="Profile Image" class="profile-image">
             <h3>${professional.name}</h3>
             <p>Profession: ${professional.profession}</p>
             <p>Experience: ${professional.experience}</p>
@@ -80,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return card;
     }
     
-
     function filterProfessionals(event) {
         event.preventDefault();
         const selectedProfession = professionSelect.value;
