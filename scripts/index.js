@@ -19,7 +19,7 @@ function fetchProfessionals() {
     xhr.onload = function () {
         if (this.status === 200) {
             const data = JSON.parse(this.responseText);
-            fetchRandomUserImages(data.length)
+            fetchRandomUserImages(data)  // Pass the entire data array
                 .then(userImages => {
                     const updatedProfessionals = data.map((professional, index) => ({
                         ...professional,
@@ -62,25 +62,27 @@ function renderProfessionals(professionals) {
     });
 }
 
-function fetchRandomUserImages(count) {
-    return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", `https://randomuser.me/api/?results=${count}`, true);
-        xhr.onload = function () {
-            if (this.status === 200) {
-                const usersData = JSON.parse(this.responseText);
-                const userImages = usersData.results.map(user => user.picture.large);
-                resolve(userImages);
-            } else {
-                reject("Failed to fetch user images");
-            }
-        };
-        xhr.onerror = function () {
-            reject("Network error occurred");
-        };
-        xhr.send();
-    });
+function fetchRandomUserImages(professionals) {
+    return Promise.all(professionals.map(professional => {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", `https://randomuser.me/api/?gender=${professional.gender}`, true);
+            xhr.onload = function () {
+                if (this.status === 200) {
+                    const userData = JSON.parse(this.responseText);
+                    resolve(userData.results[0].picture.large);
+                } else {
+                    reject("Failed to fetch user image");
+                }
+            };
+            xhr.onerror = function () {
+                reject("Network error occurred");
+            };
+            xhr.send();
+        });
+    }));
 }
+
 
 function createProfessionalCard(professional, imageUrl = "../media/image.jpg") {
     const card = document.createElement("div");
@@ -115,3 +117,4 @@ window.viewProfessionalDetails = function (professionalId) {
 };
 
 loadProfessionals();
+
