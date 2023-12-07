@@ -1,0 +1,179 @@
+[
+    {
+        "id": "1",
+        "name": "Alice Johnson",
+        "profession": "IT Specialist",
+        "experience": "5 years",
+        "reviews": 4.8,
+        "price": 100,
+        "priceUnit": "hour",
+        "bio": "Experienced IT specialist with expertise in web development and network security.",
+        "availability": "Weekdays"
+    },
+    {
+        "id": "2",
+        "name": "Bob Smith",
+        "profession": "Civil Engineer",
+        "experience": "10 years",
+        "reviews": 4.5,
+        "price": 120,
+        "priceUnit": "hour",
+        "bio": "Professional civil engineer specializing in structural design and urban planning.",
+        "availability": "Weekends"
+    },
+    {
+        "id": "3",
+        "name": "Carol White",
+        "profession": "Sales Consultant",
+        "experience": "3 years",
+        "reviews": 4.2,
+        "price": 50,
+        "priceUnit": "hour",
+        "bio": "Dynamic sales consultant with a passion for customer service and relationship building.",
+        "availability": "Weekdays and Weekends"
+    },
+    {
+        "id": "4",
+        "name": "David Green",
+        "profession": "Marketing Strategist",
+        "experience": "7 years",
+        "reviews": 4.7,
+        "price": 90,
+        "priceUnit": "hour",
+        "bio": "Creative marketing strategist specializing in digital marketing strategies and brand management.",
+        "availability": "Weekdays"
+    },
+    {
+        "id": "5",
+        "name": "Eva Brown",
+        "profession": "Plumber",
+        "experience": "8 years",
+        "reviews": 4.9,
+        "price": 80,
+        "priceUnit": "hour",
+        "bio": "Skilled plumber with extensive experience in residential and commercial plumbing systems.",
+        "availability": "Emergency 24/7"
+    },
+    {
+        "id": "6",
+        "name": "Frank Miller",
+        "profession": "Babysitter",
+        "experience": "2 years",
+        "reviews": 4.3,
+        "price": 25,
+        "priceUnit": "hour",
+        "bio": "Reliable and caring babysitter, well-versed in child development and engaging activities.",
+        "availability": "Weekends"
+    },
+    {
+        "id": "7",
+        "name": "Grace Lee",
+        "profession": "House Cleaner",
+        "experience": "6 years",
+        "reviews": 4.6,
+        "price": 60,
+        "priceUnit": "hour",
+        "bio": "Efficient and meticulous house cleaner, committed to providing top-notch cleaning services.",
+        "availability": "Weekdays"
+    },
+    {
+        "id": "8",
+        "name": "Henry Wilson",
+        "profession": "Carpenter",
+        "experience": "9 years",
+        "reviews": 4.8,
+        "price": 70,
+        "priceUnit": "hour",
+        "bio": "Expert carpenter specializing in furniture making and custom woodwork.",
+        "availability": "Weekdays and Weekends"
+    },
+
+    {
+        "id": "9",
+        "name": "Isabel Garcia",
+        "profession": "Graphic Designer",
+        "experience": "4 years",
+        "reviews": 4.5,
+        "price": 85,
+        "priceUnit": "hour",
+        "bio": "Creative graphic designer specializing in branding and digital illustrations.",
+        "availability": "Weekdays and Weekends"
+    },
+    {
+        "id": "10",
+        "name": "Jason Martinez",
+        "profession": "Electrician",
+        "experience": "12 years",
+        "reviews": 4.7,
+        "price": 95,
+        "priceUnit": "hour",
+        "bio": "Licensed electrician skilled in residential and commercial electrical systems.",
+        "availability": "Emergency 24/7"
+    },
+    {
+        "id": "11",
+        "name": "Kathy Brown",
+        "profession": "Yoga Instructor",
+        "experience": "6 years",
+        "reviews": 4.6,
+        "price": 40,
+        "priceUnit": "hour",
+        "bio": "Certified yoga instructor passionate about holistic wellness and mindfulness.",
+        "availability": "Weekends"
+    },
+    {
+        "id": "12",
+        "name": "Liam Nguyen",
+        "profession": "Web Developer",
+        "experience": "8 years",
+        "reviews": 4.9,
+        "price": 110,
+        "priceUnit": "hour",
+        "bio": "Experienced web developer specializing in front-end technologies and user experience design.",
+        "availability": "Weekdays"
+    },
+    {
+        "id": "13",
+        "name": "Mia Clark",
+        "profession": "Personal Trainer",
+        "experience": "5 years",
+        "reviews": 4.8,
+        "price": 70,
+        "priceUnit": "hour",
+        "bio": "Personal trainer focused on tailored fitness programs and nutrition advice.",
+        "availability": "Weekdays and Weekends"
+    },
+    {
+        "id": "14",
+        "name": "Noah Patel",
+        "profession": "Financial Advisor",
+        "experience": "10 years",
+        "reviews": 4.7,
+        "price": 120,
+        "priceUnit": "hour",
+        "bio": "Expert financial advisor providing guidance on investments, savings, and retirement planning.",
+        "availability": "Weekdays"
+    },
+    {
+        "id": "15",
+        "name": "Olivia Kim",
+        "profession": "Interior Designer",
+        "experience": "7 years",
+        "reviews": 4.6,
+        "price": 90,
+        "priceUnit": "hour",
+        "bio": "Innovative interior designer known for contemporary designs and space optimization.",
+        "availability": "Weekdays and Weekends"
+    },
+    {
+        "id": "16",
+        "name": "Pablo Rodriguez",
+        "profession": "Chef",
+        "experience": "9 years",
+        "reviews": 4.8,
+        "price": 100,
+        "priceUnit": "hour",
+        "bio": "Professional chef with expertise in international cuisines and culinary arts.",
+        "availability": "Weekends"
+    }
+]
