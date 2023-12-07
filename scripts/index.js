@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let professionals = localStorage.getItem('professionals');
         if (professionals) {
             professionals = JSON.parse(professionals);
-            populateFilterOptions(professionals);
+            filterOptions(professionals);
             renderProfessionals(professionals);
         } else {
             fetchProfessionals();
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.status === 200) {
                 const data = JSON.parse(this.responseText);
                 localStorage.setItem('professionals', this.responseText);
-                populateFilterOptions(data);
+                filterOptions(data);
                 renderProfessionals(data);
             } else {
                 console.error('Error fetching data:', xhr.statusText);
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     }
 
-    function populateFilterOptions(professionals) {
+    function filterOptions(professionals) {
         const professionSet = new Set(professionals.map(p => p.profession));
         professionSelect.innerHTML = '<option value="">Any</option>';
         professionSet.forEach(profession => {
@@ -90,12 +90,12 @@ function createProfessionalCard(professional, imageUrl = '../media/image.jpg') {
     card.innerHTML = `
         <img class="imgUser" src="${imageUrl}" alt="Profile Image" class="profile-image">
         <h3>${professional.name}</h3>
-        <p><i class="fa-solid fa-user-tie"></i> Profession: ${professional.profession}</p>
+        <p>Profession: ${professional.profession}</p>
         <p>Experience: ${professional.experience}</p>
         <p>Rating: ${professional.reviews} / 5</p>
         <p>Rate: $${professional.price}/${professional.priceUnit}</p>
         <p>Availability: ${professional.availability}</p>
-        <button onclick="viewProfessionalDetails('${professional.id}')">View Details <i class="fa-solid fa-arrow-right"></i></button>
+        <button onclick="viewProfessionalDetails('${professional.id}')">View Details</button>
     `;
     return card;
 }
