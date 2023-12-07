@@ -66,41 +66,41 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    function fetchRandomUserImages(count) {
-        return new Promise((resolve, reject) => {
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', `https://randomuser.me/api/?results=${count}`, true);
-            xhr.onload = function() {
-                if (this.status === 200) {
-                    const usersData = JSON.parse(this.responseText);
-                    const userImages = usersData.results.map(user => user.picture.large);
-                    resolve(userImages);
-                } else {
-                    reject('Failed to fetch user images');
-                }
-            };
-            xhr.onerror = function() {
-                reject('Network error occurred');
-            };
-            xhr.send();
-        });
-    }
-    
-    function createProfessionalCard(professional, imageUrl = 'path/to/default/image.jpg') {
-        const card = document.createElement('div');
-        card.className = 'professional-card';
-        card.innerHTML = `
-            <img src="${imageUrl}" alt="Profile Image" class="profile-image">
-            <h3>${professional.name}</h3>
-            <p>Profession: ${professional.profession}</p>
-            <p>Experience: ${professional.experience}</p>
-            <p>Rating: ${professional.reviews} / 5</p>
-            <p>Rate: $${professional.price}/${professional.priceUnit}</p>
-            <p>Availability: ${professional.availability}</p>
-            <button onclick="viewProfessionalDetails('${professional.id}')">View Details</button>
-        `;
-        return card;
-    }
+   function fetchRandomUserImages(count) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `https://randomuser.me/api/?results=${count}`, true);
+        xhr.onload = function() {
+            if (this.status === 200) {
+                const usersData = JSON.parse(this.responseText);
+                const userImages = usersData.results.map(user => user.picture.large);
+                resolve(userImages);
+            } else {
+                reject('Failed to fetch user images');
+            }
+        };
+        xhr.onerror = function() {
+            reject('Network error occurred');
+        };
+        xhr.send();
+    });
+}
+
+function createProfessionalCard(professional, imageUrl = 'path/to/default/image.jpg') {
+    const card = document.createElement('div');
+    card.className = 'professional-card';
+    card.innerHTML = `
+        <img src="${imageUrl}" alt="Profile Image" class="profile-image">
+        <h3>${professional.name}</h3>
+        <p>Profession: ${professional.profession}</p>
+        <p>Experience: ${professional.experience}</p>
+        <p>Rating: ${professional.reviews} / 5</p>
+        <p>Rate: $${professional.price}/${professional.priceUnit}</p>
+        <p>Availability: ${professional.availability}</p>
+        <button onclick="viewProfessionalDetails('${professional.id}')">View Details</button>
+    `;
+    return card;
+}
     
     function filterProfessionals(event) {
         event.preventDefault();
