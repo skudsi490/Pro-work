@@ -1,0 +1,30 @@
+{
+    "users":[
+    
+        {
+            "id":1,
+            "firstName":"Erik",
+            "lastName":"Shore",
+            "email":"shoreerik247@gmail.com",
+            "password":"shoreerik247"
+       
+        },
+        {
+            "id":2,
+            "firstName":"Daniel",
+            "lastName":"Uretsky",
+            "email":"daniel@gmail.com",
+            "password":"daniel123"
+       
+        },
+        {
+            "id":3,
+            "firstName":"Jonatan",
+            "lastName":"Magdalani",
+            "email":"jonatan@gmail.com",
+            "password":"jonatan"
+       
+        }
+
+    ]
+}
