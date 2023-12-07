@@ -3,6 +3,8 @@ body{
     margin: auto;
     display: flex;
     color: black;
+    background: rgb(255,255,255);
+background: linear-gradient(40deg, rgba(255,255,255,1) 26%, rgba(51,226,255,1) 86%, rgba(46,214,240,1) 100%);
 }
 
 .mainDiv{
@@ -74,13 +76,14 @@ input{
     padding: 10px 25px;
     border-radius: 50px;
     border: none;
-    background-color: rgb(255, 123, 0);
+    background-color: rgb(0, 174, 209);
     outline: none;
     transition: 0.5s;
 }
 
 #login:hover{
-    background-color: rgb(209, 101, 0);
+    background-color: #020024;
+    color: #fff;
     cursor: pointer;
     transform: scale(1.1,1.1);
     transition: 0.5s;

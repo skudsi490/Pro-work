@@ -1,6 +1,3 @@
-import { fetchUsers } from "../utils/fetchUsers.js";
-
-let users = await fetchUsers();
 let usersFromLocalStorage = JSON.parse(localStorage.getItem("userData"));
 console.log(usersFromLocalStorage);
 
@@ -13,8 +10,7 @@ let password = document.getElementById("password");
 let wrongData = document.getElementById("wrongData");
 
 class Users {
-    constructor(id, firstName, lastName, email, password) {
-        this.id = id;
+    constructor( firstName, lastName, email, password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -26,13 +22,7 @@ function register() {
     if (firstName.value == "" ||  lastName.value == "" ||  email.value == "" || password.value == "") {
         wrongData.innerText = "Missing Data";
     } else {
-        for (let x in usersFromLocalStorage) {
-            let userObj = usersFromLocalStorage[x];
-            if (email.value == userObj.email) {
-                wrongData.innerText = "This user already exists in the system";
-                break;
-            } else {
-                let user1 = new Users(users.length + 1, firstName.value, lastName.value, email.value, password.value)
+        let user1 = new Users(firstName.value, lastName.value, email.value, password.value)
                 users.push(user1);
                 localStorage.setItem("userData", JSON.stringify(users));
                 wrongData.innerText = "User successfully created";
@@ -40,10 +30,7 @@ function register() {
                 setTimeout(() => {
                     window.location.href = '../pages/login.html';
                 }, 2000);
-                break;
-            }
-        };
-    }
+    };
 }
 
 function login_handler() {
