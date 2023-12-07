@@ -92,12 +92,12 @@ function createProfessionalCard(professional, imageUrl = '../media/image.jpg') {
     card.innerHTML = `
         <img class="imgUser" src="${imageUrl}" alt="Profile Image" class="profile-image">
         <h3>${professional.name}</h3>
-        <p>Profession: ${professional.profession}</p>
+        <p><i class="fa-solid fa-user-tie"></i> Profession: ${professional.profession}</p>
         <p>Experience: ${professional.experience}</p>
         <p>Rating: ${professional.reviews} / 5</p>
         <p>Rate: $${professional.price}/${professional.priceUnit}</p>
         <p>Availability: ${professional.availability}</p>
-        <button onclick="viewProfessionalDetails('${professional.id}')">View Details</button>
+        <button onclick="viewProfessionalDetails('${professional.id}')">View Details <i class="fa-solid fa-arrow-right"></i></button>
     `;
     return card;
 }
