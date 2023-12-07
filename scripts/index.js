@@ -90,7 +90,7 @@ function createProfessionalCard(professional, imageUrl = '../media/image.jpg') {
     const card = document.createElement('div');
     card.className = 'professional-card';
     card.innerHTML = `
-        <img src="${imageUrl}" alt="Profile Image" class="profile-image">
+        <img class="imgUser" src="${imageUrl}" alt="Profile Image" class="profile-image">
         <h3>${professional.name}</h3>
         <p>Profession: ${professional.profession}</p>
         <p>Experience: ${professional.experience}</p>
