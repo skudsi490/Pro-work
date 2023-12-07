@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const defaultImage = imageUrl || 'path/to/default/image.jpg'; 
     
         card.innerHTML = `
-            <img src="${defaultImage}" alt="Profile Image" class="profile-image">
+            <img class="imgUser" src="${defaultImage}" alt="Profile Image" class="profile-image">
             <h3>${professional.name}</h3>
             <p>Profession: ${professional.profession}</p>
             <p>Experience: ${professional.experience}</p>
