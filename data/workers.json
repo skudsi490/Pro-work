@@ -8,7 +8,8 @@
         "price": 100,
         "priceUnit": "hour",
         "bio": "Experienced IT specialist with expertise in web development and network security.",
-        "availability": "Weekdays"
+        "availability": "Weekdays",
+        "gender": "female"
     },
     {
         "id": "2",
@@ -19,7 +20,8 @@
         "price": 120,
         "priceUnit": "hour",
         "bio": "Professional civil engineer specializing in structural design and urban planning.",
-        "availability": "Weekends"
+        "availability": "Weekends",
+        "gender": "male"
     },
     {
         "id": "3",
@@ -30,7 +32,8 @@
         "price": 50,
         "priceUnit": "hour",
         "bio": "Dynamic sales consultant with a passion for customer service and relationship building.",
-        "availability": "Weekdays and Weekends"
+        "availability": "Weekdays and Weekends",
+        "gender": "female"
     },
     {
         "id": "4",
@@ -41,7 +44,8 @@
         "price": 90,
         "priceUnit": "hour",
         "bio": "Creative marketing strategist specializing in digital marketing strategies and brand management.",
-        "availability": "Weekdays"
+        "availability": "Weekdays",
+        "gender": "male"
     },
     {
         "id": "5",
@@ -52,7 +56,8 @@
         "price": 80,
         "priceUnit": "hour",
         "bio": "Skilled plumber with extensive experience in residential and commercial plumbing systems.",
-        "availability": "Emergency 24/7"
+        "availability": "Emergency 24/7",
+        "gender": "female"
     },
     {
         "id": "6",
@@ -63,7 +68,8 @@
         "price": 25,
         "priceUnit": "hour",
         "bio": "Reliable and caring babysitter, well-versed in child development and engaging activities.",
-        "availability": "Weekends"
+        "availability": "Weekends",
+        "gender": "male"
     },
     {
         "id": "7",
@@ -74,7 +80,8 @@
         "price": 60,
         "priceUnit": "hour",
         "bio": "Efficient and meticulous house cleaner, committed to providing top-notch cleaning services.",
-        "availability": "Weekdays"
+        "availability": "Weekdays",
+        "gender": "female"
     },
     {
         "id": "8",
@@ -85,7 +92,8 @@
         "price": 70,
         "priceUnit": "hour",
         "bio": "Expert carpenter specializing in furniture making and custom woodwork.",
-        "availability": "Weekdays and Weekends"
+        "availability": "Weekdays and Weekends",
+        "gender": "male"
     },
 
     {
@@ -97,7 +105,8 @@
         "price": 85,
         "priceUnit": "hour",
         "bio": "Creative graphic designer specializing in branding and digital illustrations.",
-        "availability": "Weekdays and Weekends"
+        "availability": "Weekdays and Weekends",
+        "gender": "female"
     },
     {
         "id": "10",
@@ -108,7 +117,8 @@
         "price": 95,
         "priceUnit": "hour",
         "bio": "Licensed electrician skilled in residential and commercial electrical systems.",
-        "availability": "Emergency 24/7"
+        "availability": "Emergency 24/7",
+        "gender": "male"
     },
     {
         "id": "11",
@@ -119,7 +129,8 @@
         "price": 40,
         "priceUnit": "hour",
         "bio": "Certified yoga instructor passionate about holistic wellness and mindfulness.",
-        "availability": "Weekends"
+        "availability": "Weekends",
+        "gender": "female"
     },
     {
         "id": "12",
@@ -130,7 +141,8 @@
         "price": 110,
         "priceUnit": "hour",
         "bio": "Experienced web developer specializing in front-end technologies and user experience design.",
-        "availability": "Weekdays"
+        "availability": "Weekdays",
+        "gender": "male"
     },
     {
         "id": "13",
@@ -141,7 +153,8 @@
         "price": 70,
         "priceUnit": "hour",
         "bio": "Personal trainer focused on tailored fitness programs and nutrition advice.",
-        "availability": "Weekdays and Weekends"
+        "availability": "Weekdays and Weekends",
+        "gender": "female"
     },
     {
         "id": "14",
@@ -152,7 +165,8 @@
         "price": 120,
         "priceUnit": "hour",
         "bio": "Expert financial advisor providing guidance on investments, savings, and retirement planning.",
-        "availability": "Weekdays"
+        "availability": "Weekdays",
+        "gender": "male"
     },
     {
         "id": "15",
@@ -163,7 +177,8 @@
         "price": 90,
         "priceUnit": "hour",
         "bio": "Innovative interior designer known for contemporary designs and space optimization.",
-        "availability": "Weekdays and Weekends"
+        "availability": "Weekdays and Weekends",
+        "gender": "female"
     },
     {
         "id": "16",
@@ -174,6 +189,7 @@
         "price": 100,
         "priceUnit": "hour",
         "bio": "Professional chef with expertise in international cuisines and culinary arts.",
-        "availability": "Weekends"
+        "availability": "Weekends",
+        "gender": "male"
     }
 ]
