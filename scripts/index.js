@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (this.status === 200) {
                 const data = JSON.parse(this.responseText);
                 localStorage.setItem('professionals', this.responseText);
-                populateFilterOptions(data);
+                FilterOptions(data);
                 renderProfessionals(data);
             } else {
                 console.error('Error fetching data:', xhr.statusText);
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         xhr.send();
     }
 
-    function populateFilterOptions(professionals) {
+    function FilterOptions(professionals) {
         const professionSet = new Set(professionals.map(p => p.profession));
         professionSelect.innerHTML = '<option value="">Any</option>';
         professionSet.forEach(profession => {
@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function() {
             professionSelect.appendChild(option);
         });
     }    
-
 
     function renderProfessionals(professionals) {
         fetchRandomUserImages(professionals.length)
