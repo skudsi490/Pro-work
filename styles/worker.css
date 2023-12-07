@@ -6,6 +6,39 @@ body, h1, h2, h3, p, form, input, select, button {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Basic styling for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Header styling */
+header {
+    background: #007bff;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
 #professional-details{
     width: fit-content;
     height: fit-content;
@@ -20,4 +53,23 @@ body, h1, h2, h3, p, form, input, select, button {
     padding-top: 100px;
     margin-top: 100px;
     align-items: center;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #filter-form {
+        width: 100%;
+    }
 }
