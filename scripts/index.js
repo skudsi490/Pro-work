@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('Error fetching user images:', error);
-                // Fallback: Render professionals without images
                 professionalsList.innerHTML = '';
                 professionals.forEach(professional => {
                     const professionalCard = createProfessionalCard(professional);

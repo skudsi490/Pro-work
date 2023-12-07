@@ -5,27 +5,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const professionalId = params.get('id');
 
     function fetchProfessionalDetails(id) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', '../data/workers.json', true);
-        xhr.onload = function() {
-            if (this.status === 200) {
-                const professionals = JSON.parse(this.responseText);
-                const professional = professionals.find(p => p.id === id);
-                if (professional) {
-                    displayProfessionalDetails(professional);
-                } else {
-                    console.error('Professional not found');
-                    professionalDetails.innerHTML = '<p>Professional details not available.</p>';
-                }
-            } else {
-                console.error('Error fetching professional details:', xhr.statusText);
-            }
-        };
-        xhr.onerror = function() {
-            console.error('Network error occurred');
-        };
-        xhr.send();
+        const professionals = JSON.parse(localStorage.getItem('professionals')) || [];
+        const professional = professionals.find(p => p.id === id);
+    
+        if (professional) {
+            displayProfessionalDetails(professional);
+        } else {
+            console.error('Professional not found');
+            professionalDetails.innerHTML = '<p>Professional details not available.</p>';
+        }
     }
+    
 
     function displayProfessionalDetails(professional) {
         professionalDetails.innerHTML = `
