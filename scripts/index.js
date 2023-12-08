@@ -1,3 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.image-slider .slider-content');
+    let currentSlide = 0;
+    const interval = 5000; // 5 seconds
+
+    function nextSlide() {
+        slides[currentSlide].style.opacity = 0;
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.opacity = 1;
+    }
+
+    slides[currentSlide].style.opacity = 1;
+    setInterval(nextSlide, interval);
+});
+
 const professionalsList = document.getElementById("professional-list");
 const filterForm = document.getElementById("filter-form");
 const professionSelect = document.getElementById("profession");
