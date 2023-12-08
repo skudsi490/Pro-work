@@ -16,6 +16,18 @@ document.addEventListener('DOMContentLoaded', function() {
 const professionalsList = document.getElementById("professional-list");
 const filterForm = document.getElementById("filter-form");
 const professionSelect = document.getElementById("profession");
+const logoutButton = document.getElementById('logout-btn');
+    const currentUser = JSON.parse(localStorage.getItem('CurrentUser'));
+
+    logoutButton.style.display = 'block';
+
+    logoutButton.addEventListener('click', function() {
+        localStorage.removeItem('CurrentUser');
+        alert('You have been logged out.');
+        window.location.href = 'home.html'; 
+    });
+
+    
 
 function loadProfessionals() {
     let professionals = localStorage.getItem("professionals");

@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-
     function displayProfessionalDetails(professional) {
         professionalDetails.innerHTML = `
             <img src="${professional.imageUrl}" alt="Profile Image">
@@ -27,16 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <p>Rate: $${professional.price}/${professional.priceUnit}</p>
             <p>Availability: ${professional.availability}</p>
             <p>${professional.bio}</p>
-            <!-- Add any other details you want to include -->
         `;
     }
 
     orderNowButton.addEventListener('click', function() {
-        const userLoggedIn = localStorage.getItem('userData');
-        if (userLoggedIn) {
-            alert('Proceeding to order...');
+        const currentUser = JSON.parse(localStorage.getItem('CurrentUser'));
+        if (currentUser) {
+            alert(`Proceeding to order for ${currentUser.firstName} ${currentUser.lastName}...`);
         } else {
-            window.location.href = 'register.html';
+            alert('You need to be logged in to place an order.');
+            window.location.href = 'login.html';
         }
     });
 
